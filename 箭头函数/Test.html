@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //ES6允许使用箭头定义的函数
+  //传统写法：无参数
+  var say = function () {
+    console.log("hello!");
+  };
+  say();
+  //ES6写法2：无参数
+  let speak = () => console.log("hello！！");
+  speak();
+
+  //传统写法：一个参数
+  var hello = function (name) {
+    return "hello" + name;
+  };
+  console.log(hello("流浪者"));
+  //ES6写法2：一个参数；
+  let hi = name => "hi" + name;
+  console.log(hi("AprilEcho"));
+
+  //传统写法：多个参数
+  var sum = function (a, b, c) {
+    return a + b + c;
+  }
+  console.log(sum(1, 2, 3));
+  //ES6箭头函数：多个参数
+  let he = (a, b, c) => a + b + c;
+  console.log(he(1, 2, 3));
+
+
+  //特性
+  //1.箭头函数的this是静态的，始终指向函数声明时所在作用域下的this的值
+  const school = {
+    name: "猪猪侠"
+  }
+
+  //传统函数
+  function getName() {
+    console.log("getName：" + this.name);
+  }
+
+  getName1 = () => console.log("getName1:" + this.name);
+  window.name = "小猪佩奇";
+  getName(); //getName:小猪佩奇
+  getName1(); //getName1:小猪佩奇
+  //使用call调用
+  getName.call(school); //getName：猪猪侠
+  getName1.call(school);//getName1：小猪佩奇
+  // 结论：箭头函数的this是静态的，始终指向函数声明时所在作用域下的this的值
+
+  // 2、不能作为构造实例化对象
+  // let Person = (name, age) => {
+  //   this.name = name;
+  //   this.age = age;
+  // }
+  // let me = new Person("菲菲", 15);
+  // console.log(me);
+  // Uncaught TypeError: Person is not a constructor
+
+  // 3.不能使用argument变量
+  // let fn = () => console.log(arguments);
+  // fn(1,2,3);
+  // 报错：Uncaught ReferenceError: arguments is not defined
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #222222;
+        }
+    </style>
+</head>
+<body>
+<div id="ad"></div>
+<script>
+  // 需求1   点击div 2s 后颜色变成粉色
+  //获取元素
+  let ad = document.getElementById('ad');
+  //绑定事件
+  // ad.addEventListener("click",function () {
+  //   //传统写法
+  //   setTimeout(function () {
+  //     console.log(this);
+  //     this.style.background = 'pink';
+  //   },2000);
+  //   //Uncaught TypeError: Cannot set properties of undefined (setting 'background')
+  // });
+
+  //修改后
+  // ad.addEventListener("click", function () {
+  //   //传统写法
+  //   let _this = this;
+  //   setTimeout(function () {
+  //     _this.style.background = 'pink';
+  //   }, 2000)
+  // });
+
+  // ES6写法
+  ad.addEventListener("click", function () {
+    setTimeout(() => {
+      this.style.background = 'pink';
+    }, 2000)
+  })
+</script>
+</body>
+</html>
