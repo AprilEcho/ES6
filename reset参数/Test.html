@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //ES6引入reset参数，用于获取函数的实参，用来代替arguments
+  // function data() {
+  //   console.log(arguments);
+  // }
+
+  function data(...args){
+    console.log(args);
+  }
+
+  data("大娃", "二娃", "三娃", "四娃");
+
+</script>
+</body>
+</html>
