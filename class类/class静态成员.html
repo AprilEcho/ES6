@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class静态成员</title>
+</head>
+<body>
+
+<script>
+  //ES5写法
+  // function Phone() {
+  // }
+  //
+  // Phone.name = "手机";
+  // Phone.change = function () {
+  //   console.log("我可以改变世界！");
+  // };
+  // let nokia = new Phone();
+  // console.log(nokia.name);//undefined
+  // //nokia.change(); //Uncaught TypeError: nokia.change is not a function
+  // Phone.prototype.color = "黑色";
+  // console.log(nokia.color);//黑色
+  // console.log(Phone.name); //手机
+  // Phone.change(); //我可以改变世界
+
+  //ES6写法
+  class Phone {
+    static name = "手机";
+    static change = function () {
+      console.log("我可以改变世界！");
+    }
+  }
+
+  let nokia = new Phone();
+  console.log(nokia.name); //undefined
+  console.log(Phone.name); //手机
+  Phone.change(); //我可以改变世界
+
+</script>
+</body>
+</html>

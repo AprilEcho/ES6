@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class类</title>
+</head>
+<body>
+
+<script>
+  //手机 ES5写法
+  // function Phone(brand, price) {
+  //   this.brand = brand;
+  //   this.price = price;
+  // }
+  //
+  // //添加方法
+  // Phone.prototype.call = function () {
+  //   console.log("我可以打电话！");
+  // }
+  // //实例化对象
+  // let HUAWEI = new Phone("华为", 5999);
+  // HUAWEI.call();
+  // console.log(HUAWEI);
+
+  //ES6写法
+  class Phone {
+    constructor(brand, price) {
+      this.brand = brand;
+      this.price = price;
+    }
+
+    call() {
+      console.log("我可以打电话!");
+    }
+  }
+
+  let HUAWEI = new Phone("华为", 5999);
+  HUAWEI.call();
+  console.log(HUAWEI);
+
+</script>
+</body>
+</html>
